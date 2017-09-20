@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ChatserviceService } from "./services/chatservice.service";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+
+  constructor(public _chs:ChatserviceService){
+
+  }
+  salir(){
+    this._chs.logout();
+  }
 }
